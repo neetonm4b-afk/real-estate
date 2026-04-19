@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- =============================================
+  ページ情報 — ここを編集してください
+  タイトル・説明・URLをサイトに合わせて変更
+============================================= -->
+<title>大阪不動産 | 収益物件・不動産投資の専門家</title>
+<meta name="description" content="大阪エリアの収益物件に特化した不動産投資専門会社。梅田・難波・天王寺を中心に利回り5%以上の物件を厳選。相談・資料請求は無料です。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://osaka-realestate.jp/">
+
+<!-- OGP（SNSシェア時の見え方） -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="大阪不動産 | 収益物件・不動産投資の専門家">
+<meta property="og:description" content="大阪エリアの収益物件専門。利回り8%超の物件を厳選紹介。相談無料。">
+<meta property="og:url"         content="https://osaka-realestate.jp/">
+<meta property="og:image"       content="https://osaka-realestate.jp/ogp.jpg">
+<meta name="twitter:card"       content="summary_large_image">
+
+<!-- Schema.org（構造化データ） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "大阪不動産株式会社",
+  "description": "大阪エリアの収益物件に特化した不動産投資専門会社",
+  "url": "https://osaka-realestate.jp/",
+  "telephone": "06-XXXX-XXXX",
+  "email": "info@osaka-realestate.jp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "大阪市北区梅田",
+    "addressCountry": "JP"
+  },
+  "openingHours": "Mo-Su 10:00-19:00",
+  "areaServed": "大阪府"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* =============================================
+    アクセシビリティ：キーボードフォーカスの可視化
+    削除しないでください
+  ============================================= */
+  :focus-visible {
+    outline: 3px solid #9FE1CB;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* スキップリンク（キーボードユーザー向け） */
+  .skip-link {
+    position: absolute; top: -100%; left: 16px;
+    background: var(--brand); color: var(--brand-lt);
+    padding: 8px 16px; border-radius: 4px; z-index: 9999;
+    font-size: 14px; font-weight: 500; text-decoration: none;
+  }
+  .skip-link:focus { top: 8px; }
+
+  /* =============================================
+    カラーパレット — ここで色をまとめて管理します
+    変更するときはこの変数を書き換えるだけでOK
+  ============================================= */
+  :root {
+    --navy:       #1A1A2E;  /* 最も濃い紺 — nav・フッター背景 */
+    --midnight:   #26215C;  /* 中間の紺 — 数値ストリップ背景 */
+    --brand:      #3C3489;  /* ブランド主色 — ボタン・アクセント */
+    --brand-mid:  #534AB7;  /* ブランドホバー色 */
+    --brand-lt:   #EEEDFE;  /* ブランド薄色 — ボタンテキスト・背景 */
+    --teal:       #1D9E75;  /* ティール — サービス②アクセント */
+    --teal-deep:  #0F6E56;  /* ティール濃色 */
+    --teal-lt:    #E1F5EE;  /* ティール薄色 */
+    --sand:       #F5F3EE;  /* サンド — セクション背景 */
+    --stone:      #E8E5DF;  /* ストーン — ボーダー色 */
+    --ink:        #1C1C1E;  /* 本文テキスト */
+    --muted:      #5F5E5A;  /* 補助テキスト */
+    --hint:       #9B9994;  /* ヒントテキスト */
+    --white:      #FFFFFF;
+    --serif:      'Noto Serif JP', serif;    /* 見出しフォント */
+    --sans:       'Noto Sans JP', sans-serif; /* 本文フォント */
+    --mono:       'DM Mono', monospace;       /* 数値フォント */
+    --r-sm:       6px;   /* 角丸 小 */
+    --r-md:       10px;  /* 角丸 中 */
+    --r-lg:       16px;  /* 角丸 大 */
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* =============================================
+    ナビゲーション
+  ============================================= */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 15px; font-weight: 700;
+    color: var(--white); letter-spacing: 0.05em;
+    text-decoration: none; /* ロゴをaタグにしてもスタイル崩れない */
+  }
+  .nav-logo span { color: #9FE1CB; }
+  .nav-links {
+    display: flex; align-items: center; gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px; color: rgba(255,255,255,0.65);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  /* !important を除去 — セレクタの詳細度を上げて解決 */
+  .nav-links .nav-cta {
+    background: var(--brand);
+    color: var(--brand-lt);
+    padding: 7px 18px; border-radius: var(--r-sm);
+    font-size: 13px; font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-links .nav-cta:hover {
+    background: var(--brand-mid);
+    color: var(--white);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 80px 40px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-grid {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 420px;
+    gap: 60px; align-items: end;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(159,225,203,0.3);
+    border-radius: 20px; padding: 4px 14px 4px 10px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #9FE1CB; flex-shrink: 0;
+  }
+  .hero-eyebrow span {
+    font-size: 12px; color: #9FE1CB; letter-spacing: 0.08em;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700; line-height: 1.3;
+    color: var(--white); margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #9FE1CB;
+  }
+  .hero-sub {
+    font-size: 15px; color: rgba(255,255,255,0.6);
+    line-height: 1.8; margin-bottom: 36px; max-width: 460px;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
+  .btn-primary {
+    background: var(--brand); color: var(--brand-lt);
+    padding: 13px 28px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    border: none; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--brand-mid); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: rgba(255,255,255,0.8);
+    padding: 12px 28px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.25); text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); transform: translateY(-1px); }
+  .hero-stats {
+    display: flex; gap: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 32px;
+  }
+  .stat-item {}
+  .stat-val {
+    font-family: var(--mono);
+    font-size: 28px; font-weight: 500;
+    color: var(--white); line-height: 1;
+  }
+  .stat-val span { font-size: 16px; color: #9FE1CB; }
+  .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+
+  /* hero right: search card */
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--r-lg);
+    padding: 28px;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+  .hero-card-title {
+    font-size: 13px; font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em; margin-bottom: 20px;
+  }
+  .form-group { margin-bottom: 14px; }
+  .form-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 6px; display: block; }
+  .form-select, .form-input {
+    width: 100%; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--r-sm); padding: 10px 14px;
+    color: var(--white); font-size: 13px;
+    font-family: var(--sans);
+    appearance: none; cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .form-select:focus, .form-input:focus {
+    outline: none; border-color: rgba(159,225,203,0.5);
+  }
+  .form-select option { background: var(--midnight); }
+  .card-btn {
+    width: 100%; background: var(--teal);
+    color: var(--white); border: none;
+    padding: 12px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    font-family: var(--sans);
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 6px;
+  }
+  .card-btn:hover { background: var(--teal-deep); transform: translateY(-1px); }
+  .card-note { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 10px; }
+
+  /* decorative strip */
+  .hero-strip {
+    background: var(--brand);
+    height: 4px; width: 100%;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--sand);
+    border-bottom: 1px solid var(--stone);
+    padding: 20px 40px;
+  }
+  .trust-inner {
+    max-width: 1160px; margin: 0 auto;
+    display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+  }
+  .trust-label { font-size: 11px; color: var(--hint); letter-spacing: 0.08em; white-space: nowrap; }
+  .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
+  .trust-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--muted);
+  }
+  .trust-icon {
+    width: 18px; height: 18px;
+    background: var(--brand-lt); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .trust-icon svg { width: 10px; height: 10px; }
+
+  /* ── SECTIONS SHARED ── */
+  section { padding: 88px 40px; }
+  .container { max-width: 1160px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px; color: var(--brand);
+    letter-spacing: 0.12em; margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700; line-height: 1.4;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 15px; color: var(--muted);
+    line-height: 1.8; max-width: 520px;
+  }
+
+  /* ── FEATURES ── */
+  .features { background: var(--white); }
+  .features-header { margin-bottom: 56px; }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .feature-card {
+    background: var(--sand);
+    border: 1px solid var(--stone);
+    border-radius: var(--r-lg);
+    padding: 32px 28px;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--brand);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-card:hover { border-color: #AFA9EC; transform: translateY(-3px); }
+  .feature-card.accent::before { background: var(--teal); }
+  .feature-card.accent:hover { border-color: #5DCAA5; }
+  .feature-icon-wrap {
+    width: 48px; height: 48px; border-radius: var(--r-md);
+    background: var(--brand-lt);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .feature-icon-wrap.teal { background: var(--teal-lt); }
+  .feature-icon-wrap svg { width: 22px; height: 22px; }
+  .feature-num {
+    font-family: var(--mono);
+    font-size: 11px; color: var(--hint);
+    margin-bottom: 10px; display: block;
+  }
+  .feature-card h3 {
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 700;
+    color: var(--navy); margin-bottom: 10px; line-height: 1.4;
+  }
+  .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .feature-tag {
+    display: inline-block; margin-top: 16px;
+    font-size: 11px; font-weight: 500;
+    color: var(--brand); background: var(--brand-lt);
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .feature-tag.teal { color: var(--teal-deep); background: var(--teal-lt); }
+
+  /* ── NUMBERS STRIP ── */
+  .numbers-strip {
+    background: var(--midnight);
+    padding: 60px 40px;
+  }
+  .numbers-inner {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--r-lg); overflow: hidden;
+  }
+  .num-item {
+    background: var(--midnight);
+    padding: 36px 32px; text-align: center;
+  }
+  .num-val {
+    font-family: var(--mono);
+    font-size: 40px; font-weight: 500; line-height: 1;
+    color: var(--white); margin-bottom: 6px;
+  }
+  .num-val em { font-style: normal; color: #9FE1CB; font-size: 22px; }
+  .num-lbl { font-size: 13px; color: rgba(255,255,255,0.45); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--sand); }
+  .testimonials-header { margin-bottom: 48px; }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--stone);
+    border-radius: var(--r-lg);
+    padding: 28px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s;
+  }
+  .testi-card:hover { border-color: #AFA9EC; }
+  .testi-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+  .star {
+    width: 14px; height: 14px;
+    background: #EF9F27; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .testi-quote {
+    font-family: var(--serif);
+    font-size: 15px; color: var(--ink);
+    line-height: 1.8; flex: 1; margin-bottom: 20px;
+  }
+  .testi-quote::before { content: '「'; color: var(--brand-mid); font-size: 18px; }
+  .testi-quote::after  { content: '」'; color: var(--brand-mid); font-size: 18px; }
+  .testi-result {
+    background: var(--teal-lt);
+    border-radius: var(--r-sm); padding: 10px 14px;
+    margin-bottom: 16px;
+  }
+  .testi-result-val {
+    font-family: var(--mono);
+    font-size: 18px; font-weight: 500; color: var(--teal-deep);
+  }
+  .testi-result-lbl { font-size: 11px; color: var(--teal-deep); opacity: 0.7; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 500; flex-shrink: 0;
+  }
+  .av-purple { background: var(--brand-lt); color: var(--brand); }
+  .av-teal   { background: var(--teal-lt);  color: var(--teal-deep); }
+  .av-stone  { background: var(--stone);    color: var(--muted); }
+  .testi-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .testi-meta { font-size: 12px; color: var(--hint); margin-top: 1px; }
+
+  /* ── FAQ ── */
+  .faq { background: var(--white); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px; align-items: start;
+  }
+  .faq-sticky { position: sticky; top: 80px; }
+  .faq-list { display: flex; flex-direction: column; gap: 2px; }
+  .faq-item {
+    border: 1px solid var(--stone);
+    border-radius: var(--r-md);
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 20px;
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px;
+    background: var(--white);
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .faq-q:hover { background: var(--sand); }
+  .faq-icon {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--brand-lt);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: transform 0.25s, background 0.2s;
+  }
+  .faq-icon svg { width: 10px; height: 10px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--brand); }
+  .faq-item.open .faq-icon svg path { stroke: white; }
+  .faq-a {
+    display: none;
+    padding: 0 20px 18px;
+    font-size: 14px; color: var(--muted);
+    line-height: 1.8;
+    border-top: 1px solid var(--stone);
+    background: var(--sand);
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--navy);
+    padding: 88px 40px;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 60px solid rgba(83,74,183,0.15);
+    pointer-events: none;
+  }
+  .cta-section::after {
+    content: '';
+    position: absolute; bottom: -60px; left: 10%;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 40px solid rgba(29,158,117,0.1);
+    pointer-events: none;
+  }
+  .cta-inner {
+    max-width: 800px; margin: 0 auto;
+    text-align: center; position: relative; z-index: 1;
+  }
+  .cta-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.12em;
+    color: #9FE1CB; margin-bottom: 20px; display: block;
+  }
+  .cta-title {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 700; color: var(--white);
+    line-height: 1.4; margin-bottom: 16px;
+  }
+  .cta-title em { font-style: normal; color: #9FE1CB; }
+  .cta-sub {
+    font-size: 15px; color: rgba(255,255,255,0.55);
+    line-height: 1.8; margin-bottom: 40px;
+  }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  .btn-white {
+    background: var(--white); color: var(--navy);
+    padding: 14px 32px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    border: none; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-white:hover { background: var(--sand); transform: translateY(-1px); }
+  .btn-teal {
+    background: var(--teal-lt); color: var(--teal-deep);
+    padding: 14px 32px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    border: none; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-teal:hover { background: #9FE1CB; transform: translateY(-1px); }
+  .btn-ghost-white {
+    background: transparent; color: rgba(255,255,255,0.65);
+    padding: 13px 28px; border-radius: var(--r-sm);
+    font-size: 14px; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2); text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.5); color: var(--white); transform: translateY(-1px); }
+  .cta-info {
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    font-size: 13px; color: rgba(255,255,255,0.35);
+  }
+  .cta-info-item { display: flex; align-items: center; gap: 6px; }
+  .cta-dot { width: 5px; height: 5px; border-radius: 50%; background: #9FE1CB; flex-shrink: 0; }
+
+  /* ── CONTACT FORM ── */
+  .contact {
+    background: var(--sand);
+    padding: 80px 40px;
+  }
+  .contact-grid {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 480px;
+    gap: 64px; align-items: start;
+  }
+  .contact-info {}
+  .contact-detail { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 18px;
+    background: var(--white); border: 1px solid var(--stone);
+    border-radius: var(--r-md);
+  }
+  .contact-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--brand-lt); border-radius: var(--r-sm);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-icon svg { width: 16px; height: 16px; }
+  .contact-item-title { font-size: 12px; color: var(--hint); margin-bottom: 2px; }
+  .contact-item-val { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .form-card {
+    background: var(--white); border: 1px solid var(--stone);
+    border-radius: var(--r-lg); padding: 36px;
+  }
+  .form-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-field { margin-bottom: 14px; }
+  .field-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; display: block; }
+  .field-input, .field-select, .field-textarea {
+    width: 100%; background: var(--sand);
+    border: 1px solid var(--stone); border-radius: var(--r-sm);
+    padding: 10px 14px; font-size: 14px; color: var(--ink);
+    font-family: var(--sans);
+    transition: border-color 0.2s;
+  }
+  .field-input:focus, .field-select:focus, .field-textarea:focus {
+    outline: none; border-color: var(--brand-mid);
+    background: var(--white);
+  }
+  .field-textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; background: var(--brand); color: var(--brand-lt);
+    border: none; border-radius: var(--r-sm);
+    padding: 14px; font-size: 14px; font-weight: 500;
+    font-family: var(--sans); cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 6px;
+  }
+  .form-submit:hover { background: var(--brand-mid); transform: translateY(-1px); }
+  .form-privacy { font-size: 11px; color: var(--hint); text-align: center; margin-top: 10px; line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 48px 40px 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-inner {
+    max-width: 1160px; margin: 0 auto;
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 24px;
+    flex-wrap: wrap; gap: 32px;
+  }
+  .footer-brand { max-width: 280px; }
+  .footer-logo {
+    font-family: var(--serif); font-size: 16px; font-weight: 700;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .footer-logo span { color: #9FE1CB; }
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.7; }
+  .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+  .footer-col {}
+  .footer-col-title { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; margin-bottom: 14px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+  .footer-license {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.04);
+    padding: 4px 12px; border-radius: 20px;
+  }
+
+  /* ── 改善⑤：本文max-width・行間 ── */
+  .section-sub, .feature-card p, .faq-a, .testi-quote {
+    max-width: 640px;
+  }
+  .faq-a { line-height: 1.9; }
+  .feature-card p { line-height: 1.9; }
+
+  /* =============================================
+    フォーム — 2ステップフォームのスタイル
+    topic-btn: 相談内容選択ボタン
+  ============================================= */
+  .topic-btn {
+    background: var(--sand);
+    border: 1.5px solid var(--stone);
+    border-radius: var(--r-sm);
+    padding: 14px 12px;
+    font-size: 14px; font-weight: 500;
+    color: var(--ink);
+    font-family: var(--sans);
+    cursor: pointer; text-align: center;
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+    line-height: 1.4; width: 100%;
+  }
+  .topic-btn:hover,
+  .topic-btn:focus-visible {
+    border-color: var(--brand);
+    color: var(--brand);
+    background: var(--brand-lt);
+  }
+  .field-error {
+    font-size: 11px; color: #E24B4A;
+    margin-top: 4px; min-height: 16px;
+  }
+  /* フォームステップの表示切り替えをCSSクラスで管理 */
+  .form-step { display: none; }
+  .form-step.active { display: block; }
+
+  /* ── 改善①：フローティングCTA ── */
+  .float-cta-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 24px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    flex-wrap: wrap;
+  }
+  .float-cta-bar.visible { transform: translateY(0); }
+  .float-cta-bar .fcta-primary {
+    background: var(--brand); color: var(--brand-lt);
+    padding: 11px 24px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s;
+    border: none; cursor: pointer; font-family: var(--sans);
+  }
+  .float-cta-bar .fcta-primary:hover { background: var(--brand-mid); }
+  .float-cta-bar .fcta-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #9FE1CB; flex-shrink: 0;
+  }
+  .float-cta-bar .fcta-line {
+    background: var(--teal-lt); color: var(--teal-deep);
+    padding: 11px 20px; border-radius: var(--r-sm);
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: background 0.2s; border: none; cursor: pointer; font-family: var(--sans);
+  }
+  .float-cta-bar .fcta-line:hover { background: #9FE1CB; }
+  .float-cta-bar .fcta-micro {
+    font-size: 12px; color: rgba(255,255,255,0.4);
+  }
+  body.float-active { padding-bottom: 64px; }
+
+  /* ── 改善②：モバイルハンバーガー＋ボトムナビ ── */
+  .ham-btn {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .ham-btn span {
+    display: block; width: 20px; height: 1.5px;
+    background: #9FE1CB; border-radius: 1px;
+    transition: transform 0.25s, opacity 0.2s;
+  }
+  .ham-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .ham-btn.open span:nth-child(2) { opacity: 0; }
+  .ham-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+    background: var(--navy); z-index: 150; flex-direction: column;
+    padding: 32px 28px; gap: 0;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 18px; color: rgba(255,255,255,0.75); text-decoration: none;
+    padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--white); }
+  .mobile-menu .mob-cta {
+    margin-top: 28px; background: var(--brand); color: var(--brand-lt);
+    text-align: center; padding: 16px; border-radius: var(--r-sm);
+    font-size: 16px; font-weight: 500; border-bottom: none;
+  }
+  .bottom-nav {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 190;
+    background: var(--navy); border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0;
+  }
+  .bottom-nav-inner {
+    display: grid; grid-template-columns: repeat(3,1fr);
+  }
+  .bnav-item {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 10px 8px; text-decoration: none;
+    font-size: 11px; color: rgba(255,255,255,0.5);
+    transition: color 0.15s; gap: 3px; cursor: pointer;
+    border: none; background: none; font-family: var(--sans);
+  }
+  .bnav-item svg { width: 18px; height: 18px; }
+  .bnav-item.primary { background: var(--brand); color: var(--brand-lt); }
+  .bnav-item:hover { color: var(--white); }
+  .bnav-item.primary:hover { color: var(--brand-lt); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .ham-btn { display: flex; }
+    .bottom-nav { display: block; }
+    .float-cta-bar { display: none; }
+    body { padding-bottom: 56px; }
+    .hero { padding: 60px 20px 0; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-card { margin-bottom: 0; }
+    section { padding: 60px 20px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .numbers-inner { grid-template-columns: repeat(2,1fr); }
+    .testi-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; gap: 36px; }
+    .faq-sticky { position: static; }
+    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .form-row { grid-template-columns: 1fr; }
+    .cta-section { padding: 60px 20px; }
+    .contact { padding: 60px 20px; }
+    .trust-bar { padding: 16px 20px; }
+    .numbers-strip { padding: 48px 20px; }
+    footer { padding: 40px 20px 24px; }
+    .footer-top { flex-direction: column; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns .btn-primary { text-align: center; }
+    .cta-btns { flex-direction: column; align-items: center; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- スキップリンク：キーボードで操作する方がメインコンテンツへ直接移動できます -->
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<!-- =============================================
+  グローバルナビゲーション
+============================================= -->
+<nav aria-label="グローバルナビゲーション">
+  <div class="nav-logo">大阪不動産<span>株式会社</span></div>
+  <ul class="nav-links" role="list">
+    <li><a href="#features">サービス</a></li>
+    <li><a href="#testimonials">実績</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+    <li><a href="#contact" class="nav-cta">無料相談</a></li>
+  </ul>
+  <button class="ham-btn" id="hamBtn"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="mobileMenu">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+</nav>
+
+<!-- モバイルメニュー — role="dialog" でスクリーンリーダーがモーダルと認識 -->
+<nav id="mobileMenu"
+  class="mobile-menu"
+  aria-label="モバイルメニュー"
+  aria-hidden="true">
+  <a href="#features" onclick="closeMobileMenu()">サービス</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">実績・お客様の声</a>
+  <a href="#faq" onclick="closeMobileMenu()">よくある質問</a>
+  <a href="#contact" onclick="closeMobileMenu()">お問い合わせ</a>
+  <a href="#contact" class="mob-cta" onclick="closeMobileMenu()">無料相談を予約する　→</a>
+</nav>
+
+<!-- ボトムナビ（モバイル専用） -->
+<nav class="bottom-nav" aria-label="クイックアクション">
+  <div class="bottom-nav-inner">
+    <a href="#features" class="bnav-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <rect x="2" y="3" width="14" height="12" rx="1.5"/><path d="M5 8h8M5 11h5"/>
+      </svg>
+      物件
+    </a>
+    <a href="#contact" class="bnav-item primary">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <path d="M9 2a7 7 0 100 14A7 7 0 009 2z"/><path d="M9 6v3l2 2"/>
+      </svg>
+      無料相談
+    </a>
+    <a href="tel:06-XXXX-XXXX" class="bnav-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <path d="M14.5 11.8c0 .3-.07.6-.21.88s-.33.54-.58.76c-.4.43-.84.64-1.3.64-.33 0-.69-.08-1.08-.25a10.9 10.9 0 01-1.08-.63 15 15 0 01-1.08-.84 14.7 14.7 0 01-.92-1 10.3 10.3 0 01-.71-1.05c-.2-.36-.38-.72-.5-1.07S7 8.63 7 8.3c0-.32.07-.62.2-.9s.33-.54.6-.77L9 5.4c.22-.2.46-.3.69-.3.28 0 .51.12.7.36l1.47 2.08c.19.25.24.52.14.8l-.58 1.1c.22.41.48.8.79 1.16.31.36.66.68 1.03.94l1.08-.6c.28-.16.56-.12.8.08l2.08 1.48c.24.19.36.42.36.7z"/>
+      </svg>
+      電話
+    </a>
+  </div>
+</nav>
+
+<!-- フローティングCTAバー（デスクトップ） -->
+<div class="float-cta-bar" id="floatCta" aria-hidden="true">
+  <a href="#contact" class="fcta-primary">
+    <div class="fcta-dot" aria-hidden="true"></div>無料で物件を探す
+  </a>
+  <a href="#contact" class="fcta-line">まず話を聞くだけでもOK</a>
+  <span class="fcta-micro">営業は一切しません・相談無料</span>
+</div>
+
+<!-- =============================================
+  メインコンテンツ — id="main-content" はスキップリンクの移動先
+============================================= -->
+<main id="main-content">
+
+<!-- =============================================
+  ヒーローセクション
+============================================= -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-content fade-up">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span>大阪エリア特化 — 投資専門チーム</span>
+      </div>
+      <h1>大阪で、<br><em>利回り8%超</em>の<br>物件と出会う。</h1>
+      <p class="hero-sub">梅田・難波・天王寺エリアに精通した投資専門チームが、あなたの資産形成を、物件選びから管理まで一貫してサポートします。</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">無料で物件を探す　→</a>
+        <a href="#features" class="btn-outline">まず話を聞くだけでもOK</a>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:40px;margin-top:-36px;">営業は一切しません。相談・資料請求すべて無料です。</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-val">850<span>件+</span></div>
+          <div class="stat-lbl">大阪エリア取引実績</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">8.2<span>%</span></div>
+          <div class="stat-lbl">平均表面利回り</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">15<span>年</span></div>
+          <div class="stat-lbl">投資専門キャリア</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card fade-up" style="transition-delay:0.15s">
+      <div class="hero-card-title">QUICK SEARCH — 物件を探す</div>
+      <div class="form-group">
+        <label class="form-label">エリア</label>
+        <select class="form-select">
+          <option>梅田・北区</option>
+          <option>難波・中央区</option>
+          <option>天王寺・阿倍野</option>
+          <option>京橋・城東区</option>
+          <option>大阪全域</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">想定利回り（最低）</label>
+        <select class="form-select">
+          <option>5% 以上</option>
+          <option>6% 以上</option>
+          <option>7% 以上</option>
+          <option>8% 以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">予算</label>
+        <select class="form-select">
+          <option>〜2,000万円</option>
+          <option>2,000〜5,000万円</option>
+          <option>5,000万円〜1億円</option>
+          <option>1億円以上</option>
+        </select>
+      </div>
+      <button class="card-btn">この条件で物件を探す</button>
+      <p class="card-note">相談・資料請求はすべて無料です</p>
+    </div>
+  </div>
+</header>
+<div class="hero-strip" role="presentation"></div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-label">信頼の根拠</span>
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        宅建免許 大阪府知事（3）第○○号
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        投資専門チーム・税理士連携
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        累計取引額 150億円超
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        不動産投資アワード受賞
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header fade-up">
+      <span class="section-eyebrow">SERVICES</span>
+      <h2 class="section-title">「買って終わり」ではない、<br>投資家のための3つのサービス</h2>
+      <p class="section-sub">物件探しから融資計画、購入後の賃貸管理まで。担当者が変わらず、ゴールまで伴走します。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 22 22" fill="none" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="18" height="15" rx="2"/>
+            <path d="M7 11h8M7 14h5"/>
+            <path d="M7 8h8"/>
+          </svg>
+        </div>
+        <span class="feature-num">01</span>
+        <h3>利回りにこだわった<br>収益物件のご提案</h3>
+        <p>表面利回り5%以上を掲載基準とし、大阪エリアの相場データをもとにキャッシュフローが出る物件だけを厳選。数百件の候補から、あなたの条件に合う物件を絞り込みます。</p>
+        <span class="feature-tag">エリア別データ分析</span>
+      </div>
+      <div class="feature-card accent fade-up" style="transition-delay:0.1s">
+        <div class="feature-icon-wrap teal">
+          <svg viewBox="0 0 22 22" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M11 7v4l3 3"/>
+          </svg>
+        </div>
+        <span class="feature-num">02</span>
+        <h3>購入から管理まで<br>一社で完結する安心感</h3>
+        <p>物件探し・融資計画・契約・入居者募集・賃貸管理まで、すべてワンストップで対応。途中で担当者が変わることなく、長期的な資産運用をサポートします。</p>
+        <span class="feature-tag teal">ワンストップ対応</span>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.2s">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 22 22" fill="none" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17l4-6 4 4 4-8 4 4"/>
+            <path d="M3 20h16"/>
+          </svg>
+        </div>
+        <span class="feature-num">03</span>
+        <h3>大阪の市場データで<br>根拠ある提案を届ける</h3>
+        <p>エリア別の空室率・家賃推移・将来予測を独自にデータ化。「なぜこの物件か」を数字で説明できる提案を行うため、初めての方でも納得して判断できます。</p>
+        <span class="feature-tag">独自マーケットレポート</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<div class="numbers-strip">
+  <div class="numbers-inner">
+    <div class="num-item fade-up">
+      <div class="num-val">850<em>+</em></div>
+      <div class="num-lbl">大阪エリア取引実績</div>
+    </div>
+    <div class="num-item fade-up" style="transition-delay:0.08s">
+      <div class="num-val">8.2<em>%</em></div>
+      <div class="num-lbl">平均表面利回り</div>
+    </div>
+    <div class="num-item fade-up" style="transition-delay:0.16s">
+      <div class="num-val">150<em>億</em></div>
+      <div class="num-lbl">累計取引総額</div>
+    </div>
+    <div class="num-item fade-up" style="transition-delay:0.24s">
+      <div class="num-val">97<em>%</em></div>
+      <div class="num-lbl">顧客満足度</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header fade-up">
+      <span class="section-eyebrow">TESTIMONIALS</span>
+      <h2 class="section-title">投資家の声と、<br>リアルな成果</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-quote">担当者が融資まで一緒に動いてくれて安心でした。最初は不安でしたが、データを見ながら一つひとつ丁寧に説明してもらえたので、納得して購入できました。</p>
+        <div class="testi-result">
+          <div class="testi-result-val">9.1%</div>
+          <div class="testi-result-lbl">購入2年後の表面利回り — 難波区マンション</div>
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar av-purple">TK</div>
+          <div>
+            <div class="testi-name">田中 浩二さん</div>
+            <div class="testi-meta">40代・会社員 / 初めての不動産投資</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up" style="transition-delay:0.1s">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-quote">税務面まで相談に乗ってもらえたことで、節税しながら資産を増やす全体戦略が見えてきました。おかげで3棟目を購入する決断ができました。</p>
+        <div class="testi-result">
+          <div class="testi-result-val">3棟</div>
+          <div class="testi-result-lbl">2年間での取得実績 — 梅田・天王寺エリア</div>
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar av-teal">MS</div>
+          <div>
+            <div class="testi-name">松本 佐知子さん</div>
+            <div class="testi-meta">50代・個人投資家 / 資産拡大フェーズ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up" style="transition-delay:0.2s">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testi-quote">購入後の賃貸管理もお任せできるので、本業に集中しながら家賃収入が入ってきます。空室が出た時も迅速に対応してもらえて、本当に助かっています。</p>
+        <div class="testi-result">
+          <div class="testi-result-val">+42万円/年</div>
+          <div class="testi-result-lbl">年間キャッシュフロー改善 — 京橋区一棟アパート</div>
+        </div>
+        <div class="testi-author">
+          <div class="testi-avatar av-stone">YW</div>
+          <div>
+            <div class="testi-name">渡辺 裕司さん</div>
+            <div class="testi-meta">30代・IT企業勤務 / 副業投資</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-sticky fade-up">
+        <span class="section-eyebrow">FAQ</span>
+        <h2 class="section-title">よくある<br>ご質問</h2>
+        <p class="section-sub">投資を検討されている方からよくいただく質問をまとめました。その他ご不明な点はお気軽にご相談ください。</p>
+        <a href="#contact" class="btn-primary" style="display:inline-block; margin-top:28px;">無料で相談する</a>
+      </div>
+      <div class="faq-list fade-up" style="transition-delay:0.1s">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+            初めての不動産投資でも相談できますか？
+            <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="faq-a">はい、もちろんです。毎月「初心者向け無料相談会」を開催しています。「投資の仕組みから知りたい」という方から「物件は決まっているが融資が不安」という方まで、現在の状況に合わせた個別の対応が可能です。まずはお気軽にご連絡ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+            融資・ローンの相談も対応してもらえますか？
+            <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="faq-a">対応しています。提携している複数の金融機関をご紹介し、お客様の属性や物件条件に合った融資計画の策定をサポートします。金利交渉のアドバイスや、複数行への同時申込みのサポートも行っています。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+            購入後の賃貸管理もお任せできますか？
+            <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="faq-a">はい。賃貸管理代行プランをご用意しています。入居者の募集・審査・契約、家賃の集金・送金、建物の維持管理、退去時の精算まで一貫して対応します。管理費用は家賃収入の5〜7%程度です（物件により異なります）。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+            どのエリアの物件を取り扱っていますか？
+            <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="faq-a">大阪府内を中心に、梅田・北区、難波・中央区、天王寺・阿倍野、京橋・城東区など、賃貸需要が安定しているエリアに特化して物件をご提案しています。兵庫・京都など近畿エリアもご相談ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+            相談・資料請求は本当に無料ですか？
+            <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="faq-a">はい、完全無料です。初回相談・物件のご紹介・市場分析レポートの提供・利回りシミュレーションのすべてを無料で行っています。仲介手数料は物件のご成約時にのみ発生します（法定の範囲内）。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="cta-eyebrow">GET STARTED — まずは一歩</span>
+    <h2 class="cta-title">「いつか投資を」が、<br><em>今日の一歩</em>に変わります。</h2>
+    <p class="cta-sub">相談・資料請求・利回りシミュレーション、すべて無料です。<br>まず話を聞くだけでも、歓迎します。</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-white">無料相談を予約する</a>
+      <a href="#contact" class="btn-teal">資料を請求する</a>
+      <a href="tel:06-XXXX-XXXX" class="btn-ghost-white">電話で相談する</a>
+    </div>
+    <div class="cta-info">
+      <div class="cta-info-item"><div class="cta-dot"></div>営業時間 10:00 – 19:00（年中無休）</div>
+      <div class="cta-info-item"><div class="cta-dot"></div>TEL: 06-XXXX-XXXX</div>
+      <div class="cta-info-item"><div class="cta-dot"></div>相談・資料請求すべて無料</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <span class="section-eyebrow">CONTACT</span>
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-sub">投資のご相談・物件のご紹介・資料請求など、どんな些細なことでもお気軽にどうぞ。専任のスタッフが丁寧にご対応します。</p>
+      <div class="contact-detail">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 10.5c0 .3-.06.58-.19.85s-.3.52-.52.74c-.36.4-.76.6-1.17.6-.3 0-.62-.07-.97-.22a9.8 9.8 0 01-.97-.57c-.34-.22-.66-.47-.97-.75-.3-.28-.58-.58-.83-.9a9.3 9.3 0 01-.64-.95c-.18-.33-.34-.65-.45-.96S7 8.07 7 7.77c0-.29.06-.56.18-.82s.3-.5.54-.7L8.57 5.3c.2-.18.41-.27.61-.27.25 0 .46.11.63.32l1.32 1.88c.17.22.21.47.13.72l-.52 1c.2.37.43.72.71 1.04.28.32.59.6.92.84l.97-.54c.25-.14.5-.1.72.07l1.87 1.33c.21.17.32.38.32.63z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-title">お電話</div>
+            <div class="contact-item-val">06-XXXX-XXXX</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M2 5l6 5 6-5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-title">メール</div>
+            <div class="contact-item-val">info@osaka-realestate.jp</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2C5.79 2 4 3.79 4 6c0 3.5 4 8 4 8s4-4.5 4-8c0-2.21-1.79-4-4-4z"/><circle cx="8" cy="6" r="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-title">所在地</div>
+            <div class="contact-item-val">大阪市北区梅田○-○-○　○○ビル8F</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-card fade-up" style="transition-delay:0.12s">
+      <div class="form-title">無料相談・お問い合わせ</div>
+
+      <!-- ステップインジケーター -->
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;" role="status" aria-live="polite">
+        <div id="step-ind-1" style="width:28px;height:28px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--brand-lt);flex-shrink:0;transition:background .2s;" aria-hidden="true">1</div>
+        <div style="flex:1;height:2px;background:var(--stone);border-radius:1px;overflow:hidden;"><div id="step-fill" style="width:0%;height:100%;background:var(--brand);transition:width .4s ease;"></div></div>
+        <div id="step-ind-2" style="width:28px;height:28px;border-radius:50%;background:var(--stone);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--muted);flex-shrink:0;transition:background .2s,color .2s;" aria-hidden="true">2</div>
+        <div style="font-size:12px;color:var(--hint);white-space:nowrap;" id="step-label">ステップ 1 / 2</div>
+      </div>
+
+      <!-- STEP 1: 相談内容選択 -->
+      <div id="form-step1" class="form-step active">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">どのようなご相談ですか？（選択してください）</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;" role="group" aria-label="相談内容を選択">
+          <button type="button" class="topic-btn" data-val="物件のご紹介を希望する">物件を探している</button>
+          <button type="button" class="topic-btn" data-val="融資・ローンのご相談">融資の相談</button>
+          <button type="button" class="topic-btn" data-val="賃貸管理について">管理について</button>
+          <button type="button" class="topic-btn" data-val="資料請求">資料請求</button>
+          <button type="button" class="topic-btn" data-val="投資・運用のご相談" style="grid-column:span 2;">投資・運用の相談</button>
+        </div>
+        <p style="font-size:11px;color:var(--hint);text-align:center;">タップするだけで次へ進みます</p>
+      </div>
+
+      <!-- STEP 2: 連絡先入力 -->
+      <div id="form-step2" class="form-step">
+        <div style="background:var(--teal-lt);border-radius:var(--r-sm);padding:8px 14px;margin-bottom:18px;font-size:13px;color:var(--teal-deep);">
+          ご相談内容：<strong id="selected-topic-label"></strong>
+          <button type="button" onclick="goStep1()" style="margin-left:8px;font-size:11px;color:var(--teal-deep);text-decoration:underline;background:none;border:none;cursor:pointer;" aria-label="相談内容を変更する">変更</button>
+        </div>
+        <input type="hidden" id="selected-topic" name="topic">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label" for="f-name">お名前 <span style="color:#E24B4A;" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+            <input type="text" class="field-input" id="f-name" name="name" placeholder="山田 太郎" required autocomplete="name" aria-required="true" aria-describedby="err-name">
+            <div class="field-error" id="err-name" role="alert" aria-live="polite"></div>
+          </div>
+          <div class="form-field">
+            <label class="field-label" for="f-tel">電話番号 <span style="color:#E24B4A;" aria-hidden="true">*</span><span class="sr-only">（必須）</span></label>
+            <input type="tel" class="field-input" id="f-tel" name="tel" placeholder="090-XXXX-XXXX" required autocomplete="tel" aria-required="true" aria-describedby="err-tel">
+            <div class="field-error" id="err-tel" role="alert" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="field-label" for="f-email">メールアドレス</label>
+          <input type="email" class="field-input" id="f-email" name="email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label class="field-label" for="f-msg">メッセージ（任意）</label>
+          <textarea class="field-textarea" id="f-msg" name="message" placeholder="ご質問・ご要望などをお気軽にどうぞ"></textarea>
+        </div>
+        <button class="form-submit" type="button" onclick="submitForm()">無料で相談する　→</button>
+        <p class="form-privacy">送信することで、プライバシーポリシーへの同意とみなします。<br>営業時間内に担当者よりご連絡いたします。</p>
+      </div>
+
+      <!-- 送信完了 -->
+      <div id="form-done" class="form-step" role="status" aria-live="polite">
+        <div style="text-align:center;padding:32px 0;">
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--teal-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg>
+          </div>
+          <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px;">送信が完了しました</div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.7;">担当者より1営業日以内にご連絡いたします。<br>お急ぎの場合はお電話ください。</div>
+          <a href="tel:06-XXXX-XXXX" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:500;color:var(--brand);">06-XXXX-XXXX</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">大阪不動産<span>株式会社</span></div>
+        <p class="footer-tagline">大阪エリアの収益物件に特化した投資専門会社。利回り重視の物件提案と長期的な資産運用サポートを行っています。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">サービス</div>
+          <ul>
+            <li><a href="#">収益物件の購入</a></li>
+            <li><a href="#">資産運用コンサル</a></li>
+            <li><a href="#">賃貸管理代行</a></li>
+            <li><a href="#">利回りシミュレーター</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">情報</div>
+          <ul>
+            <li><a href="#">大阪市場分析</a></li>
+            <li><a href="#">実績・お客様の声</a></li>
+            <li><a href="#">よくある質問</a></li>
+            <li><a href="#">会社案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">法的情報</div>
+          <ul>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">利用規約</a></li>
+            <li><a href="#">宅建業者情報</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 大阪不動産株式会社. All rights reserved. 宅建免許 大阪府知事（3）第○○号</div>
+      <div class="footer-license">不動産投資にはリスクが伴います。詳しくはご相談ください。</div>
+    </div>
+  </div>
+</footer>
+
+</main><!-- #main-content 終了 -->
+
+<script>
+/* ==============================================
+  JavaScript — 編集ガイド
+  ・関数名を変えると onclick="..." も変える必要があります
+  ・IDを変えると getElementById('...') も変える必要があります
+  ・コメントを読んで必要な箇所だけ編集してください
+============================================== */
+
+/* スクリーンリーダー専用テキスト用スタイルをCSSから漏れないようJSで補完 */
+(function() {
+  const s = document.createElement('style');
+  s.textContent = '.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}';
+  document.head.appendChild(s);
+})();
+
+/* ── ハンバーガーメニュー ── */
+const hamBtn     = document.getElementById('hamBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamBtn.addEventListener('click', () => {
+  const willOpen = !mobileMenu.classList.contains('open');
+  mobileMenu.classList.toggle('open', willOpen);
+  hamBtn.classList.toggle('open', willOpen);
+  /* aria-expanded でスクリーンリーダーに開閉状態を伝える */
+  hamBtn.setAttribute('aria-expanded', String(willOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!willOpen));
+  /* メニューが開いているときは背景スクロールを止める */
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+  hamBtn.setAttribute('aria-label', willOpen ? 'メニューを閉じる' : 'メニューを開く');
+});
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  hamBtn.classList.remove('open');
+  hamBtn.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  hamBtn.setAttribute('aria-label', 'メニューを開く');
+}
+
+/* ── フローティングCTA（デスクトップ） ── */
+const floatCta = document.getElementById('floatCta');
+let floatShown = false;
+/* throttle：スクロールイベントの過剰発火を防ぐ（パフォーマンス改善） */
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    const y = window.scrollY;
+    if (y > 200 && !floatShown) {
+      floatCta.classList.add('visible');
+      floatCta.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('float-active');
+      floatShown = true;
+    } else if (y <= 200 && floatShown) {
+      floatCta.classList.remove('visible');
+      floatCta.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('float-active');
+      floatShown = false;
+    }
+    ticking = false;
+  });
+}, { passive: true });
+
+/* ── FAQ アコーディオン ── */
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  /* 他のすべてを閉じる */
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    item.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ── フェードインアニメーション ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target); /* 一度表示したら監視を外す */
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* ── 画像 CLS 対策 ── */
+document.querySelectorAll('img:not([width])').forEach(img => {
+  img.style.aspectRatio = '16/9';
+  img.setAttribute('loading', 'lazy');
+  img.setAttribute('decoding', 'async');
+});
+
+/* ── 2ステップフォーム ── */
+
+/** ステップの表示を切り替える共通関数
+ *  @param {string} activeId - 表示したい要素のID
+ */
+function showStep(activeId) {
+  ['form-step1', 'form-step2', 'form-done'].forEach(id => {
+    const el = document.getElementById(id);
+    if (id === activeId) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  });
+}
+
+/* トピックボタンのクリックでステップ2へ */
+document.querySelectorAll('.topic-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const val = btn.dataset.val;
+    document.getElementById('selected-topic').value = val;
+    document.getElementById('selected-topic-label').textContent = val;
+    goStep2();
+  });
+});
+
+function goStep2() {
+  showStep('form-step2');
+  document.getElementById('step-fill').style.width = '100%';
+  document.getElementById('step-ind-2').style.cssText +=
+    ';background:var(--brand);color:var(--brand-lt)';
+  document.getElementById('step-label').textContent = 'ステップ 2 / 2';
+  /* フォームの先頭にフォーカスを移動（スクリーンリーダー・キーボードユーザー向け） */
+  document.getElementById('f-name').focus();
+}
+
+function goStep1() {
+  showStep('form-step1');
+  document.getElementById('step-fill').style.width = '0%';
+  document.getElementById('step-ind-2').style.cssText +=
+    ';background:var(--stone);color:var(--muted)';
+  document.getElementById('step-label').textContent = 'ステップ 1 / 2';
+}
+
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const tel  = document.getElementById('f-tel').value.trim();
+  let isValid = true;
+
+  /* エラーリセット */
+  document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+
+  /* バリデーション */
+  if (!name) {
+    document.getElementById('err-name').textContent = 'お名前を入力してください';
+    isValid = false;
+  }
+  if (!tel) {
+    document.getElementById('err-tel').textContent = '電話番号を入力してください';
+    isValid = false;
+  }
+  if (!isValid) return;
+
+  /* 送信完了画面へ */
+  showStep('form-done');
+  document.getElementById('step-label').textContent = '送信完了';
+  /* スクリーンリーダーが完了を読み上げられるようフォーカス移動 */
+  document.getElementById('form-done').focus();
+}
+</script>
+</body>
+</html>
